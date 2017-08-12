@@ -1,3 +1,4 @@
+#include "crc16.h"
 #include <SoftwareSerial.h>
 uint8_t outdata[] = {0x01, 0x03, 0x00, 0x00, 0x00, 0x01, 0x84, 0x0A } ;
 uint8_t incomingdata[7] ;
@@ -25,7 +26,17 @@ void loop() {
            Serial.print("/");
            Serial.print(((double)incomingdata[3]*256+(double)incomingdata[4])/10) ;
            Serial.print("  m/s ) \n");
-            
+            Serial.println(ModbusCRC16(incomingdata,5)) ;
+            Serial.println(incomingdata[6]*256+incomingdata[5]) ;
+            if (CompareCRC16(ModbusCRC16(incomingdata,5),incomingdata[6],incomingdata[5]))
+                {
+                 Serial.println("The Data is Correct") ; 
+                }
+                else
+                {
+                 Serial.println("The Data is not Correct") ; 
+                }
+                
         }
         else
         {

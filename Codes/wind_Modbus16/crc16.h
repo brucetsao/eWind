@@ -48,3 +48,19 @@ unsigned int  ModbusCRC16 (byte *nData, int wLength)
     return wCRCWord;
 } // End: CRC16
 
+
+boolean CompareCRC16(unsigned int stdvalue, uint8_t Li, uint8_t Lo)
+{
+           
+      if (stdvalue == Li*256+Lo)
+        {
+            return true ;
+        }
+        else
+         {
+            return false ;
+        }
+} 
+
+
+
