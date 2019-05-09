@@ -1,5 +1,5 @@
 #include "crc16.h"
-#include <SoftwareSerial.h>
+//#include <NewSoftSerial.h>
 #include <WiFi.h>
 uint8_t outdata[] = {0x01, 0x03, 0x00, 0x00, 0x00, 0x01, 0x84, 0x0A } ;
 uint8_t incomingdata[7] ;
@@ -17,7 +17,7 @@ WiFiServer server(80);
 #define RXPin  0
 #define TXPin  1
 
- SoftwareSerial mySerial(RXPin, TXPin); // RX, TX
+ NewSoftSerial mySerial(RXPin, TXPin); // RX, TX  
  //modbusDevice dev = new modbusDevice() ;
 void setup() {
   // put your setup code here, to run once:
