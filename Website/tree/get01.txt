@@ -1,0 +1,5 @@
+GET /192.168.88.105/wind/windadd.php?mac=F8F005F7D0F7&ip=192.168.88.109&speed=0.00&way=0&temp=0.00&humid=0.00 HTTP/1.1
+Host: 192.168.88.105
+
+
+
